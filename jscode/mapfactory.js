@@ -53,16 +53,23 @@ function Map(w,h,div) {
     }
 
     this.deletelink = function () {
-        var localArray = [];
-        for(var index = 0;index < this.array.length;index++){
-            if(index != this.linkindex) {
-                localArray.push(this.array[index]);
+        if(this.array.length > 1){
+            var localArray = [];
+            for(var index = 0;index < this.array.length;index++){
+                if(index != this.linkindex) {
+                    localArray.push(this.array[index]);
+                }
             }
+            this.array = localArray;
+            this.draw();
+            this.linkindex--;
+            if(this.linkindex < 0){
+                this.linkindex = 0;
+            }    
         }
-        this.array = localArray;
-        this.draw();
-        this.linkindex--;
-        if(this.linkindex < 0){
+        if(this.array.length == 1){
+            this.array = [];
+            this.draw();
             this.linkindex = 0;
         }
     }
