@@ -33,7 +33,7 @@ foreach($dna->javascript as $value){
     copy($baseurl."jscode/".$value,"jscode/".$value);
 }
 
-foreach($dna->icons as $value){
+foreach($dna->iconsymbols as $value){
     copy($baseurl."iconsymbols/".$value,"iconsymbols/".$value);
 }
 

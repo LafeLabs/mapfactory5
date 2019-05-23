@@ -1,7 +1,6 @@
 {
     "html": [
         "README.md",
-        "frozen.html",
         "index.html",
         "scroll.html"
     ],
@@ -9,11 +8,9 @@
         "mapfactory.js"
     ],
     "iconsymbols": [
-        "branchdownicon.svg",
         "createicon.svg",
         "deletebutton.svg",
         "editor.svg",
-        "freezeicon.svg",
         "littlerotatelefticon.svg",
         "littlerotaterighticon.svg",
         "littlezoominicon.svg",
@@ -44,19 +41,14 @@
         "dna.txt"
     ],
     "php": [
-        "deletebranch.txt",
         "deletefile.txt",
         "dir.txt",
         "dnagenerator.txt",
         "editor.txt",
         "fileloader.txt",
         "filesaver.txt",
-        "freeze.txt",
-        "metareplicator.txt",
-        "newbranch.txt",
         "replicator.txt",
         "text2php.txt",
-        "unfreeze.txt",
         "upload.txt"
     ]
 }

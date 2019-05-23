@@ -37,8 +37,6 @@
         <a href = "scroll.html">
             <img id = "scrollbutton" class = "button" style = "width:50px;" src = "iconsymbols/scrollicon.svg"/>
         </a>
-        <img id = "branchdownbutton" class = "button" style = "width:50px;" src = "iconsymbols/branchdownicon.svg"/>
-        <img id = "freezebutton" class = "button" style = "width:50px;" src = "iconsymbols/freezeicon.svg"/>
 
         <div id = "linkeditstuff">
             <table id = "linkedittable">
@@ -75,20 +73,7 @@
 
     </div>
     <div id = "box2">
-        <div id = "branchscroll">
-            <table style = "display:none" id = "branchnametable">
-                <tr>
-                    <td>
-                        Branch Name:
-                    </td>
-                    <td>
-                        <input id = "branchnameinput"/>
-                    </td>
-                </tr>
-            </table>     
-            <ul id = "branchlist">
-            </ul>   
-        </div>     
+  
         <div id = "feedscroll">
             <form id = "uploadform" style = "margin-top:10px" action="upload.php" method="post" enctype="multipart/form-data">
                 Select image to upload:
@@ -350,7 +335,6 @@ document.getElementById("editmapbutton").onclick = function() {
         document.getElementById("hammerxy").style.display = "block";
         document.getElementById("linkedittable").style.display = "block";
         document.getElementById("feedscroll").style.display = "block";
-        document.getElementById("branchscroll").style.display = "none";
         mainmap.linkArray[mainmap.linkindex].style.border = "solid";
         mainmap.linkArray[mainmap.linkindex].style.borderWidth = "0.1px";
         document.getElementById("rotatezoombox").style.display = "block";
@@ -361,7 +345,6 @@ document.getElementById("editmapbutton").onclick = function() {
         mainmap.linkArray[mainmap.linkindex].style.border = "none";
         document.getElementById("linkedittable").style.display = "none";
         document.getElementById("feedscroll").style.display = "none";
-        document.getElementById("branchscroll").style.display = "block";
         document.getElementById("rotatezoombox").style.display = "none";
 
     }
@@ -373,80 +356,7 @@ document.getElementById("linkedittable").style.display = "none";
 document.getElementById("hammerxy").style.display = "none";
 document.getElementById("feedscroll").style.display = "none";
 document.getElementById("rotatezoombox").style.display = "none";
-document.getElementById("branchscroll").style.display = "block";
 
-document.getElementById("branchdownbutton").onclick = function() {
-    document.getElementById("branchnametable").style.display = "block";
-}
-
-// begin stuff that we don't need if we're not editing things
-
-
-var httpc = new XMLHttpRequest();
-httpc.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        branches = JSON.parse(this.responseText);
-        for(var index = 0;index < branches.length;index++) {
-            var newa = document.createElement("A");
-            newa.href = branches[index] + "/";
-            newa.innerHTML = branches[index] + "/";
-            var newli = document.createElement("LI");
-            newli.appendChild(newa);
-            document.getElementById("branchscroll").appendChild(newli);
-            var newimg = document.createElement("IMG");
-            newimg.classList.add("button");
-            newimg.style.width = "50px";
-            newimg.style.height = "50px";
-            newimg.id = "del" + branches[index];
-            newimg.src  = "iconsymbols/deletebutton.svg";
-
-            newli.appendChild(newimg);
-            newimg.onclick = function() {
-                var branchname = this.id.substring(3);
-                var httpc = new XMLHttpRequest();
-                httpc.open("GET","deletebranch.php?filename=" + branchname, true);
-                httpc.send();//send text to deletebranch.php
-                this.parentElement.parentElement.removeChild(this.parentElement);
-            }    
-            
-        }
-    }
-};
-
-httpc.open("GET","dir.php?type=dir", true);
-httpc.send();//send text to newbranch.php
-
-document.getElementById("branchnameinput").onchange = function() {
-
-    var newbranchname = this.value;
-
-    var newa = document.createElement("A");
-    newa.href = newbranchname + "/";
-    newa.innerHTML = newbranchname + "/";
-    var newli = document.createElement("LI");
-    newli.appendChild(newa);
-    document.getElementById("branchlist").appendChild(newli);
-    var newimg = document.createElement("IMG");
-    newimg.classList.add("button");
-    newimg.style.width = "50px";
-    newimg.style.height = "50px";
-    newimg.id = "del" + newbranchname;
-    newimg.src  = "iconsymbols/deletebutton.svg";
-    newli.appendChild(newimg);
-    newimg.onclick = function() {
-        var branchname = this.id.substring(3);
-        var httpc = new XMLHttpRequest();
-        httpc.open("GET","deletebranch.php?filename=" + branchname, true);
-        httpc.send();//send text to deletebranch.php
-        this.parentElement.parentElement.removeChild(this.parentElement);
-    }    
-
-    var httpc = new XMLHttpRequest();
-    httpc.open("GET","newbranch.php?filename=" + newbranchname, true);
-    httpc.send();//send text to newbranch.php
-
-    this.style.display = "none";
-}
 
 uploadImages = [];
 var httpc = new XMLHttpRequest();
@@ -516,16 +426,6 @@ httpc4.onreadystatechange = function() {
 httpc4.open("GET", "dir.php?filename=symbols", true);
 httpc4.send();
 
-// end stuff that we don't need if we're not editing things
-
-document.getElementById("freezebutton").onclick = function() {
-
-    var httpcfreeze = new XMLHttpRequest();
-    httpcfreeze.open("GET", "freeze.php", true);
-    httpcfreeze.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    httpcfreeze.send();
-
-}
 
 </script>
 <style>
@@ -609,21 +509,14 @@ input,table,select{
     bottom:0%;
 }
 #feedscroll{
-    width:50%;
+    width:80%;
     height:100%;
     position:absolute;
     right:0px;
     top:0px;
     overflow:scroll;
 }
-#branchscroll{
-    width:50%;
-    height:100%;
-    position:absolute;
-    right:0px;
-    top:0px;
-    overflow:scroll;
-}
+
 .uploadimage{
     max-width:50%;
     display:block;
