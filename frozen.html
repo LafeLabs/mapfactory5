@@ -1,0 +1,130 @@
+<!--<frozen>-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <!--
+
+        EVERYTHING IS PHYSICAL 
+        EVERYTHING IS FRACTAL
+        EVERYTHING IS RECURSIVE
+        NO MONEY 
+        MO MINING 
+        NO PROPERTY
+        LOOK AT THE INSECTS
+        LOOK AT THE FUNGI
+        LANGUAGE IS HOW THE MIND PARSES REALITY
+
+    -->
+    <!--Stop Google:-->
+    <META NAME="robots" CONTENT="noindex,nofollow">
+    <script src="jscode/mapfactory.js"></script>
+
+<script>    
+</script>
+</head>
+<body>    
+<!--<datadiv>-->
+<div id = "datadiv" style = "display:none">
+[
+    {
+        "x": 0.17780429594272076,
+        "y": 0.5799522673031027,
+        "w": 0.5119331742243437,
+        "angle": 0,
+        "text": "Read about this",
+        "href": "scroll.html",
+        "src": ""
+    },
+    {
+        "x": 0.06921241050119331,
+        "y": 0.10739856801909307,
+        "w": 0.2064439140811456,
+        "angle": 0,
+        "text": "code editor",
+        "href": "editor.php",
+        "src": ""
+    }
+]
+</div>
+<!--</datadiv>-->
+<div id = "mainmap"></div>
+
+<script>
+
+landscape = false;
+if(innerWidth > innerHeight){
+
+    squareWidth = innerHeight;
+    marginWidth = innerWidth - squareWidth;
+    landscape = true;
+
+}
+else{
+    
+    squareWidth = innerWidth;
+    marginWidth = innerHeight - squareWidth;
+
+}
+
+mainmap = new Map(squareWidth,squareWidth,document.getElementById("mainmap"));
+
+mainmap.array = JSON.parse(document.getElementById("datadiv").innerHTML);
+mainmap.draw();
+
+
+document.getElementById("unfreezebutton").onclick = function() {
+
+    var httpcfreeze = new XMLHttpRequest();
+    httpcfreeze.open("GET", "freeze.php", true);
+    httpcfreeze.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpcfreeze.send();
+
+}
+
+</script>
+<style>
+body{
+    overflow:hidden;
+}
+input,table,select{
+    font-family:courier;
+    font-size:16px;
+}
+#mainmap{
+    position:absolute;
+    left:0px;
+    top:0px;
+    overflow:hidden;
+}
+#mainmap a{
+    font-family:Helvetica;
+    border-width:0.1px;
+}
+.button{
+    cursor:pointer;
+}
+.button:hover{
+    background-color:#50ff50;
+}
+.button:active{
+    background-color:yellow;
+}
+@media only screen and (orientation: portrait) {
+    #mainmap{
+        border-bottom:solid;
+        border-width:0.1px;
+    }
+}
+@media only screen and (orientation: landscape) {
+    #mainmap{
+        border-right:solid;
+        border-width:0.1px;
+    }
+
+}
+
+</style>
+</body>
+</html>
