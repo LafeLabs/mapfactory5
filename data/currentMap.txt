@@ -16,5 +16,23 @@
         "text": "Name of Map",
         "href": "",
         "src": ""
+    },
+    {
+        "x": 0.011933174224343675,
+        "y": 0.9343675417661098,
+        "w": 0.3448687350835322,
+        "angle": 0,
+        "text": "code editor",
+        "href": "editor.php",
+        "src": ""
+    },
+    {
+        "x": 0.014319809069212411,
+        "y": 0.014319809069212411,
+        "w": 0.3448687350835322,
+        "angle": 0,
+        "text": "link to previous map",
+        "href": "http://www.maplelawn.net/",
+        "src": ""
     }
 ]
