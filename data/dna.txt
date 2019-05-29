@@ -34,7 +34,8 @@
         "circle.svg",
         "longarrow.svg",
         "longthinarrow.svg",
-        "shortarrow.svg"
+        "shortarrow.svg",
+        "x.svg"
     ],
     "data": [
         "currentMap.txt",
