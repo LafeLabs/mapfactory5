@@ -33,6 +33,7 @@ EGO DEATH:
 
     <div class = "html file">index.html</div>
     <div class = "html file">scroll.html</div>
+    <div class = "html file">pageeditor.html</div>
 
     <div class = "markdown file">README.md</div>
 
