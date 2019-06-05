@@ -7,5 +7,14 @@
         "text": "Name of Map",
         "href": "",
         "src": ""
+    },
+    {
+        "x": 0.33770883054892603,
+        "y": 0.3794749403341289,
+        "w": 0.3615751789976134,
+        "angle": 0,
+        "text": "read about this system",
+        "href": "scroll.html",
+        "src": ""
     }
 ]
