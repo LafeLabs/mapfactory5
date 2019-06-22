@@ -22,6 +22,23 @@
 
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 
+<!--un-comment to add math: -->
+<!-- 
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script>
+            MathJax.Hub.Config({
+                tex2jax: {
+                inlineMath: [['$','$'], ['\\(','\\)']],
+                processEscapes: true,
+                processClass: "mathjax",
+                ignoreClass: "no-mathjax"
+                }
+            });//			MathJax.Hub.Typeset();//tell Mathjax to update the math
+        </script>
+        
+-->
+
 <script>    
 </script>
 </head>
@@ -156,6 +173,8 @@ var httpc2 = new XMLHttpRequest();
 
         mainmap.array = JSON.parse(this.responseText);
         mainmap.draw();
+        //un comment for math
+        //MathJax.Hub.Typeset();
 
     }
 };
@@ -212,6 +231,8 @@ function tableupdate() {
         document.getElementById("hrefinput").value = mainmap.array[mainmap.linkindex].href;   
 
     }
+    //un comment for math
+    //MathJax.Hub.Typeset();
 }
 
 document.getElementById("deletebutton").onclick = function() {
@@ -235,6 +256,9 @@ document.getElementById("movedownbutton").onclick  = function() {
 document.getElementById("textinput").onchange = function() {
     mainmap.array[mainmap.linkindex].text = this.value;
     mainmap.draw();
+    //un comment for math
+    //MathJax.Hub.Typeset();
+
 }
 
 document.getElementById("srcinput").onchange = function() {
