@@ -38,7 +38,6 @@ EGO DEATH:
     <div class = "markdown file">README.md</div>
 
     <div class = "javascript file">jscode/mapfactory.js</div>
-    
 
 <?php 
 

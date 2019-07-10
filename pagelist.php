@@ -19,7 +19,7 @@
     </tr>
 </table>
 
-<ul>
+<ul id = "mainlist">
 <?php
 
 // list directories as links
@@ -30,7 +30,7 @@ $files = scandir(getcwd());
 foreach($files as $value){
     if($value{0} != "." && is_dir($value) && $value != "php" && $value != "jscode" && $value != "data" && $value != "html" && $value != "symbols" && $value != "fonts" && $value != "icons" && $value != "iconsymbols" && $value != "uploadimages"){
                 
-        echo "\n<li><a href = \"".$value."/\">".$value."/</a></li>\n";
+        echo "\n<li><a href = \"".$value."/\">".$value."/</a><img class = \"button\" style = \"width:30px\" src = \"iconsymbols/deletebutton.svg\"></li>\n";
         
     }
 }
@@ -70,6 +70,22 @@ inputs[3].onchange = function() {
     this.parentNode.appendChild(newa);
 }
     
+    
+deletebuttons = document.getElementById("mainlist").getElementsByTagName("IMG");
+
+for(var index = 0;index < deletebuttons.length;index++){
+    deletebuttons[index].onclick = function() {
+        thisdir = this.parentNode.getElementsByTagName("A")[0].innerHTML;
+        var httpc = new XMLHttpRequest();
+        var url = "deletebranch.php";         
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("filename=" + thisdir);//send text to deletefile.php
+        this.parentNode.parentNode.removeChild(this.parentNode);
+
+    }
+}
+
 </script>
 <style>
     body{
@@ -77,5 +93,14 @@ inputs[3].onchange = function() {
     }
     table{
         font-family:courier;
+    }
+    .button{
+        cursor:pointer;
+    }
+    .button:hover{
+        background-color:green;
+    }
+    .button:active{
+        background-color:yellow;
     }
 </style>

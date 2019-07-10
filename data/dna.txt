@@ -28,6 +28,7 @@
         "savebutton.svg",
         "scaleslider.svg",
         "scrollicon.svg",
+        "tree.svg",
         "zoominicon.svg",
         "zoomouticon.svg"
     ],
@@ -43,6 +44,7 @@
         "dna.txt"
     ],
     "php": [
+        "deletebranch.txt",
         "deletefile.txt",
         "dir.txt",
         "dnagenerator.txt",
