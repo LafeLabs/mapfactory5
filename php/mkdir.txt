@@ -5,7 +5,8 @@ $dirname = $_GET["dir"];//get dir
 
 mkdir($dirname);
 
-copy("replicator.php",$dirname."/replicator.php");
+copy("https://raw.githubusercontent.com/LafeLabs/thing/master/php/replicator.txt","symbol/replicator.php");
+
 
 echo "<a href = \"$dirname\">".$dirname."</a>"
 ?>
