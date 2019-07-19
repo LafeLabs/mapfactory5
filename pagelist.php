@@ -9,14 +9,6 @@
         <td>new map factory name:</td>
         <td><input/></td>
     </tr>
-    <tr>
-        <td>new symbol factory name:</td>
-        <td><input/></td>
-    </tr>
-    <tr>
-        <td>new technical paper name:</td>
-        <td><input/></td>
-    </tr>
 </table>
 
 <ul id = "mainlist">
@@ -55,21 +47,6 @@ inputs[1].onchange = function() {
     this.parentNode.appendChild(newa);
 }
 
-inputs[2].onchange = function() {
-    var newa = document.createElement("A");
-    newa.innerHTML = "mksymbol.php?dir=" + this.value;
-    newa.href = "mksymbol.php?dir=" + this.value;
-    this.parentNode.appendChild(newa);
-}
-
-
-inputs[3].onchange = function() {
-    var newa = document.createElement("A");
-    newa.innerHTML = "mkpaper.php?dir=" + this.value;
-    newa.href = "mkpaper.php?dir=" + this.value;
-    this.parentNode.appendChild(newa);
-}
-    
     
 deletebuttons = document.getElementById("mainlist").getElementsByTagName("IMG");
 
