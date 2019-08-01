@@ -17,6 +17,8 @@
         "littlerotaterighticon.svg",
         "littlezoominicon.svg",
         "littlezoomouticon.svg",
+        "mapicon.svg",
+        "memeicon.svg",
         "movedownbutton.svg",
         "moveupbutton.svg",
         "navigator.svg",
