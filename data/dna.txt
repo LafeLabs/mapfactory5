@@ -2,6 +2,7 @@
     "html": [
         "README.md",
         "index.html",
+        "list.html",
         "pageeditor.html",
         "scroll.html"
     ],
@@ -52,10 +53,7 @@
         "fileloader.txt",
         "filesaver.txt",
         "mkdir.txt",
-        "mkpage.txt",
-        "mkpaper.txt",
-        "mksymbol.txt",
-        "pagelist.txt",
+        "mkmap.txt",
         "replicator.txt",
         "text2php.txt",
         "upload.txt"

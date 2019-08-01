@@ -1,11 +1,11 @@
 <?php
-//mkpaper.php?dir=[dirname]
+//mkmap.php?dir=[dirname]
 
 $dirname = $_GET["dir"];//get dir
 
 mkdir($dirname);
 
-copy("https://raw.githubusercontent.com/LafeLabs/technicalpaper/master/php/replicator.txt",$dirname."/replicator.php");
+copy("https://raw.githubusercontent.com/LafeLabs/mapfactory5/master/php/replicator.txt",$dirname."/replicator.php");
 
 echo "<a href = \"".$dirname."/replicator.php\">".$dirname."/replicator.php</a>";
 
