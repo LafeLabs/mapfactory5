@@ -6,7 +6,7 @@ A "map" in this context is a general type of computer file which consists of a s
 
 The symbol for a map is 
 
-![](iconsymbols/navigator.svg).  Click on that link from this screen to get back to the map.
+![](iconsymbols/mapicon.svg).  Click on that link from this screen to get back to the map.
 
 To edit this file, click on the "edit" icon, which looks like this:
 
@@ -52,7 +52,7 @@ To edit all the underlying code of the system click on the following link:
 
 [code editor](editor.php)
 
-To replicate the system, read the "page" replicator documentation and replicate this the same way.  To make a new page with a page replicator, go to [pagelist.php](pagelist.php) and make a new page, which will automatically have the scroll describing how it is replicated.  You can also use pagelist link to create other elements of the Geometron system: symbol factory and technical paper.
+To replicate the system, read the "page" replicator documentation and replicate this the same way.  To make a new page with a page replicator, go to [list.html](list.html) and make a new page, which will automatically have the scroll describing how it is replicated.  You can also use pagelist link to create other elements of the Geometron system: symbol factory and technical paper.
 
 
 
